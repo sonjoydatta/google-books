@@ -32,7 +32,7 @@ const BookDetails = ( props ) => {
   }
   
   return (
-    <div className="BookDetails">
+    <article className="BookDetails">
       {
         !isEmpty(props.data) ?
           <Row>
@@ -74,7 +74,7 @@ const BookDetails = ( props ) => {
             </Col>
           </Row> : <Loading />
       }
-    </div>
+    </article>
   );
 }
 
