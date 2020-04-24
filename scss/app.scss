@@ -2,18 +2,22 @@
 @import './mixins';
 @import './variables';
 @import '~bootstrap/scss/bootstrap';
+@import './loading';
 
 html,
 body,
 #__next,
 main {
-  height: 100%;
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: $black;
 }
 
 .PageWrapper {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +25,7 @@ main {
 
   &-Overly {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: rgba($color: $black, $alpha: 0.75);
   }
 }
@@ -41,6 +45,18 @@ main {
 
     &:focus {
       box-shadow: none;
+    }
+
+    &::placeholder {
+      color: $gray-500;
+    }
+
+    &::-ms-input-placeholder {
+      color: $gray-500;
+    }
+
+    &::-ms-input-placeholder {
+      color: $gray-500;
     }
   }
 
@@ -83,6 +99,13 @@ main {
   color: $white;
   @include border-radius(5px);
   background-color: rgba($color: $black, $alpha: 0.65);
+
+  &-Loading {
+    min-height: 356px;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+  }
 
   &-Heading {
     font-size: 21px;
@@ -170,8 +193,8 @@ main {
 .Footer {
 
   &-Credit {
+    width: 100%;
     padding: 20px 0;
     text-align: center;
-    @include flexbox();
   }
 }

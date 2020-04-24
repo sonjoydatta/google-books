@@ -1,51 +1,68 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Head from 'next/head';
 import { Container, Row, Col } from 'react-bootstrap';
-import { DebounceInput } from 'react-debounce-input';
 import fetch from 'isomorphic-unfetch';
 
-import BookDetails from '../components/BookDetails';
-import Footer from '../components/Footer';
+import { SearchBar, BookDetails, FooterCredit } from '../components';
 
 const Homepage = () => {
-  const [search, setSearch] = useState({
+  const [treatise, setTreatise] = useState({
     keyword: '',
-    results: [],
-    targetResult: {}
+    items: [],
+    item: {}
   });
 
-  // Debounce Search
-  const searchHandler = ( e ) => {
-    const searchKeyword = e.target.value;
+  // Get popular treatise
+  useEffect(() => {
+    fetch(`${process.env.API_URL}/volumes/yl4dILkcqm4C`)
+      .then( res => res.json() )
+      .then( data => {
+        setTreatise({ 
+          ...treatise,
+          item: data
+        });
+      })
+      .catch( (err) => console.log(err) );
+  }, []);
 
-    if (searchKeyword) {
-      fetch(`${process.env.API_URL}/volumes?q=${searchKeyword}`)
+  // Search treatise by keyword
+  const searchHandler = ( e ) => {
+    const keyword = e.target.value;
+
+    if (keyword) {
+      fetch(`${process.env.API_URL}/volumes?q=${keyword}`)
         .then( res => res.json() )
         .then( data => {
-          setSearch({ 
-            keyword: searchKeyword,
-            results: data.items,
-            targetResult: {}
-          });
-        });
+          if (data.totalItems > 0) {
+            setTreatise({ 
+              ...treatise,
+              keyword: keyword,
+              items: data.items
+            });
+          }
+        })
+        .catch( (err) => console.log(err) );
     } else {
-      setSearch({ results: [] });
+      setTreatise({ 
+        ...treatise,
+        items: [] 
+      });
     }
   }
 
-  // Set target item
-  const searchTargetHandler = ( id ) => {
-    const { results } = search;
-    const target = results.filter(item => { return item.id === id })[0];
+  // Get specific treatise
+  const getTreatiseHandler = ( id ) => {
+    const { items } = treatise;
+    const targetItem = items.filter(item => { return item.id === id })[0];
     
-    setSearch({
+    setTreatise({
       keyword: '',
-      results: [],
-      targetResult: target
+      items: [],
+      item: targetItem
     });
   }
 
-  const { keyword, results, targetResult } = search;
+  const { keyword, items, item } = treatise;
   
   return (
     <Fragment>
@@ -60,37 +77,20 @@ const Homepage = () => {
             <Container>
               <Row>
                 <Col md={{ span: 8, offset: 2 }}>
-                  <div className="PrimarySearch">
-                    <DebounceInput
-                      minLength={3}
-                      debounceTimeout={300}
-                      value={keyword}
-                      className="form-control"
-                      placeholder="Search for a book..."
-                      onChange={searchHandler} 
-                    />
-                    {
-                      results.length > 0 &&
-                        <ul className="PrimarySearch-Result shadow-sm">
-                          {
-                            results.map(result => (
-                              <li 
-                                key={result.id}
-                                onClick={() => searchTargetHandler(result.id)}
-                              >{result.volumeInfo.title}</li>
-                            ))
-                          }
-                        </ul>
-                    }
-                  </div>
-                  <BookDetails data={targetResult} />
+                  <SearchBar
+                    value={keyword}
+                    data={items}
+                    changeHandler={searchHandler}
+                    clickHandler={getTreatiseHandler}
+                  />
+                  <BookDetails data={item} />
+                  <FooterCredit />
                 </Col>
               </Row>
             </Container>
           </div>
         </div>
       </main>
-      <Footer />
     </Fragment>
   )
 }

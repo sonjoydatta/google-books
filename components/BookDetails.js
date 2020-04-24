@@ -1,109 +1,79 @@
-import { useState, useEffect } from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 import Moment from 'react-moment';
 
 import { isEmpty, truncate, languages } from '../utils';
-import BookMeta from '../components/BookMeta';
-import BookRating from '../components/BookRating';
+import { BookMeta, BookRating, Loading } from '../components';
 
 const BookDetails = ( props ) => {
-  // Default data
-  const [book, setBook] = useState({
-    name: 'The Lord of the Rings',
-    thumbnail: 'https://books.google.com/books/content?id=yl4dILkcqm4C&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72-xREe8i4Gv9fkzg4GfGO1tE_FWEhm0p1pWaJz5ORSB0GimFuc19JGGmpCWBtKK5QVFuF1K_JlU23MdaO_toyyoyFqnmJ-g13nmDNmv7VB3fLO89Yrwix399EDtTG_aPEVhACF&source=gbs_api',
-    rating: 4.5,
-    count: 67,
-    publishedYear: '2012-02-15',
-    authors: [ 'J.R.R. Tolkien' ],
-    pageNumber: 1216,
-    category: 'Fiction / Fantasy / Epic',
-    language: 'en',
-    description: 'A PBS Great American Read Top 100 Pick One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the...',
-    pdfDownload: 'http://books.google.com/books/download/The_Lord_of_the_Rings-sample-pdf.acsm?id=yl4dILkcqm4C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api',
-    webPreview: 'http://play.google.com/books/reader?id=yl4dILkcqm4C&hl=&printsec=frontcover&source=gbs_api'
-  });
+  let title, imageLink, averageRating, ratingsCount, publishedDate, authors, pageCount, categories, language, description, pdfLink, webReaderLink;
 
-  // Update state with new data
-  useEffect(() => {
-    if (!isEmpty(props.data)) {
-      const { volumeInfo, accessInfo } = props.data;
+  // Set treatise to variables
+  if (!isEmpty(props.data)) {
+    const { volumeInfo, accessInfo } = props.data;
 
-      setBook({
-        name: volumeInfo.title,
-        thumbnail: volumeInfo.imageLinks.thumbnail,
-        rating: volumeInfo.averageRating,
-        count: volumeInfo.ratingsCount,
-        publishedYear: volumeInfo.publishedDate,
-        authors: volumeInfo.authors,
-        pageNumber: volumeInfo.pageCount,
-        category: volumeInfo.categories,
-        language: volumeInfo.language,
-        description: volumeInfo.description,
-        pdfDownload: accessInfo.pdf.isAvailable ? accessInfo.pdf.acsTokenLink : '',
-        webPreview: accessInfo.webReaderLink
-      })
+    title         = volumeInfo.title;
+    if (!isEmpty(volumeInfo.imageLinks)) {
+      imageLink   = volumeInfo.imageLinks.thumbnail;
     }
-  }, [props.data]);
-
-  const { name, thumbnail, rating, count, publishedYear, authors, pageNumber, category, language, description, pdfDownload, webPreview } = book;
+    averageRating = volumeInfo.averageRating;
+    ratingsCount  = volumeInfo.ratingsCount;
+    publishedDate = volumeInfo.publishedDate;
+    authors       = volumeInfo.authors;
+    pageCount     = volumeInfo.pageCount;
+    categories    = volumeInfo.categories;
+    language      = volumeInfo.language;
+    description   = volumeInfo.description;
+    if (!isEmpty(accessInfo.pdf)) {
+      if (accessInfo.pdf.isAvailable) {
+        pdfLink   = accessInfo.pdf.acsTokenLink;
+      }
+    }
+    webReaderLink = accessInfo.webReaderLink;
+  }
   
   return (
     <div className="BookDetails">
-      <Row>
-        <Col md="3">
-          <Image src={thumbnail !== '' ? thumbnail : '/static/empty-cover.jpeg'} thumbnail />
-          <BookRating rating={rating} count={count} />
-        </Col>
-        <Col md="9">
-          <h1 className="BookDetails-Heading">
-            {name}
-            {
-              publishedYear !== '' && publishedYear !== undefined && 
-                <span> – <Moment date={new Date(publishedYear)} format="YYYY" /></span>
-            }
-          </h1>
+      {
+        !isEmpty(props.data) ?
           <Row>
-            {
-              authors.length > 0 &&
-                <BookMeta name="Author" value={authors.join(', ')} />
-            }
-            {
-              pageNumber > 0 && pageNumber !== undefined &&
-                <BookMeta name="Page number" value={pageNumber} />
-            }
-            {
-              category !== '' && category !== undefined &&
-                <BookMeta name="Category" value={category} />
-            }
-            {
-              language !== '' && language !== undefined &&
-                <BookMeta name="Language" value={languages.filter(item => { return item.code === language })[0].name} />
-            }
-          </Row>
-          {
-            description !== '' && description !== undefined &&
-              <p 
-                className="BookDetails-Desc"
-                dangerouslySetInnerHTML={{ __html: truncate(description, 500) }}
-              />
-          }
-          {
-            webPreview !== '' &&
-              <a 
-                target="_blink"
-                href={webPreview}
-                className="btn btn-success mr-3"
-              >Read Now</a>
-          }
-          {
-            pdfDownload !== '' &&
-              <a 
-                href={pdfDownload}
-                className="btn btn-danger"
-              >Download PDF</a>
-          }
-        </Col>
-      </Row>
+            <Col md="3">
+              {
+                imageLink !== undefined ?
+                  <Image src={imageLink} thumbnail /> :
+                  <Image src='/static/empty-cover.jpeg' thumbnail />
+              }
+              <BookRating rating={averageRating} count={ratingsCount} />
+            </Col>
+            <Col md="9">
+              <h1 className="BookDetails-Heading">
+                {title}
+                { publishedDate !== undefined && <span> – <Moment date={new Date(publishedDate)} format="YYYY" /></span> }
+              </h1>
+              <Row>
+                { authors !== undefined && authors.length > 0 && <BookMeta name="Author" value={authors.join(', ')} /> }
+                { pageCount !== undefined && <BookMeta name="Page number" value={pageCount} /> }
+                { categories !== undefined && <BookMeta name="Category" value={categories} /> }
+                { language !== undefined && <BookMeta name="Language" value={languages.filter(item => { return item.code === language })[0].name} /> }
+              </Row>
+              { description !== undefined && <p className="BookDetails-Desc">{truncate(description, 500).replace(/<[^>]+>/g, '')}</p> }
+              {
+                webReaderLink !== undefined &&
+                  <a 
+                    href={webReaderLink}
+                    className="btn btn-success mr-3"
+                  >Read Now</a> 
+              }
+              {
+                pdfLink !== undefined &&
+                  <a 
+                    target="_blink"
+                    href={pdfLink}
+                    className="btn btn-danger"
+                  >Download PDF</a>
+              }
+            </Col>
+          </Row> : <Loading />
+      }
     </div>
   );
 }
