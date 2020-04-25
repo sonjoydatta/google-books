@@ -121,6 +121,8 @@ body {
   }
 
   &-Rating {
+    width: 100%;
+    display: inline-block;
     
     &__Heading {
       color: $info;
