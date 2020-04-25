@@ -1,4 +1,6 @@
 import { DebounceInput } from 'react-debounce-input';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ( props ) => {
   const { value, changeHandler, data, clickHandler } = props;
@@ -13,6 +15,7 @@ const SearchBar = ( props ) => {
         placeholder="Search for a book..."
         onChange={changeHandler} 
       />
+      <FontAwesomeIcon icon={faSearch} className="form-control__Icon" />
       {
         data.length > 0 &&
           <ul className="PrimarySearch-Result shadow-sm">

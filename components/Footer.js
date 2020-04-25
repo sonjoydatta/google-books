@@ -1,8 +1,8 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
-const FooterCredit = () => {
+const Footer = () => {
   return (
-    <div className="Footer">
+    <footer className="Footer">
       <Container>
         <Row>
           <Col>
@@ -16,8 +16,8 @@ const FooterCredit = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </footer>
   );
 }
 
-export default FooterCredit;
+export default Footer;

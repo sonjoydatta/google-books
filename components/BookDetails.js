@@ -55,6 +55,7 @@ const BookDetails = ( props ) => {
               {
                 webReaderLink !== undefined &&
                   <a 
+                    target="_blink"
                     href={webReaderLink}
                     className="btn btn-success mr-3"
                   >Read Now</a> 

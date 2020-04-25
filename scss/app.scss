@@ -7,27 +7,21 @@
 html,
 body,
 #__next,
-main {
+.PageWrapper {
   min-height: 100vh;
 }
 
 body {
   background-color: $black;
-}
-
-.PageWrapper {
-  width: 100%;
-  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(#{$assetPath}/bg.jpg);
+}
 
-  &-Overly {
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgba($color: $black, $alpha: 0.75);
-  }
+.PageWrapper {
+  width: 100%;
+  background-color: rgba($color: $black, $alpha: 0.75);
 }
 
 .PrimarySearch {
@@ -41,7 +35,15 @@ body {
     border-right: 0;
     border-color: $white;
     border-radius: 0;
+    padding-left: 25px;
     background-color: transparent;
+
+    &__Icon {
+      width: 18px;
+      color: $gray-400;
+      position: absolute;
+      top: 10px;
+    }
 
     &:focus {
       box-shadow: none;
