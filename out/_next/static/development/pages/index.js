@@ -567,42 +567,19 @@ var Layout = function Layout(props) {
       lineNumber: 10,
       columnNumber: 9
     }
-  })), __jsx("a", {
-    href: "https://github.com/sonjoydatta/google-books",
+  })), __jsx("main", {
+    className: "Main",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13,
       columnNumber: 7
     }
-  }, __jsx("img", {
-    style: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      border: 0
-    },
-    src: "https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png",
-    alt: "Fork me on GitHub",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 9
-    }
-  })), __jsx("main", {
-    className: "Main",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 7
-    }
   }, props.children), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 17,
       columnNumber: 7
     }
   }));
@@ -46050,7 +46027,7 @@ var languages = [{
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsonjoydatta%2FDesktop%2Fgoogle-books%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -46073,5 +46050,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
