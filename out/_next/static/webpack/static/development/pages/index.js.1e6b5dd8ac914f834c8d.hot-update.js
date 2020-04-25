@@ -1,9 +1,9 @@
 webpackHotUpdate("static/development/pages/index.js",{
 
-/***/ "./components/FooterCredit.js":
-/*!************************************!*\
-  !*** ./components/FooterCredit.js ***!
-  \************************************/
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13,14 +13,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 var _this = undefined,
-    _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/FooterCredit.js";
+    _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/Footer.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-var FooterCredit = function FooterCredit() {
-  return __jsx("div", {
+var Footer = function Footer() {
+  return __jsx("footer", {
     className: "Footer",
     __self: _this,
     __source: {
@@ -104,9 +104,9 @@ var FooterCredit = function FooterCredit() {
   }, "Powered by Google"))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (FooterCredit);
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.bef3fa87aa50156c0ac6.hot-update.js.map
+//# sourceMappingURL=index.js.1e6b5dd8ac914f834c8d.hot-update.js.map

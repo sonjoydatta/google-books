@@ -184,6 +184,7 @@ var BookDetails = function BookDetails(props) {
       columnNumber: 46
     }
   }, Object(_utils__WEBPACK_IMPORTED_MODULE_3__["truncate"])(description, 500).replace(/<[^>]+>/g, '')), webReaderLink !== undefined && __jsx("a", {
+    target: "_blink",
     href: webReaderLink,
     className: "btn btn-success mr-3",
     __self: _this,
@@ -199,14 +200,14 @@ var BookDetails = function BookDetails(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 65,
       columnNumber: 19
     }
   }, "Download PDF"))) : __jsx(_components__WEBPACK_IMPORTED_MODULE_4__["Loading"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 20
     }
   }));
@@ -404,10 +405,10 @@ var BookRating = function BookRating(props) {
 
 /***/ }),
 
-/***/ "./components/FooterCredit.js":
-/*!************************************!*\
-  !*** ./components/FooterCredit.js ***!
-  \************************************/
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -417,14 +418,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 var _this = undefined,
-    _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/FooterCredit.js";
+    _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/Footer.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-var FooterCredit = function FooterCredit() {
-  return __jsx("div", {
+var Footer = function Footer() {
+  return __jsx("footer", {
     className: "Footer",
     __self: _this,
     __source: {
@@ -508,7 +509,7 @@ var FooterCredit = function FooterCredit() {
   }, "Powered by Google"))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (FooterCredit);
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
@@ -525,7 +526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _FooterCredit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FooterCredit */ "./components/FooterCredit.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
 var _this = undefined,
     _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/Layout.js";
 
@@ -534,27 +535,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 var Layout = function Layout(props) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  return __jsx("div", {
+    className: "PageWrapper",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 7,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 8,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 9,
       columnNumber: 9
     }
   }, "Read Favourite Book | Sonjoy Datta - Powered by Google"), __jsx("link", {
@@ -563,40 +564,25 @@ var Layout = function Layout(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 10,
       columnNumber: 9
     }
   })), __jsx("main", {
+    className: "Main",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 7
-    }
-  }, __jsx("div", {
-    className: "PageWrapper",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 13,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    className: "PageWrapper-Overly",
+  }, props.children), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 11
+      lineNumber: 17,
+      columnNumber: 7
     }
-  }, props.children, __jsx(_FooterCredit__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 13
-    }
-  })))));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -750,7 +736,7 @@ var SearchBar = function SearchBar(props) {
 /*!*****************************!*\
   !*** ./components/index.js ***!
   \*****************************/
-/*! exports provided: Layout, SearchBar, BookDetails, BookMeta, BookRating, FooterCredit, Loading */
+/*! exports provided: Layout, SearchBar, BookDetails, BookMeta, BookRating, Footer, Loading */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -770,8 +756,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookRating__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookRating */ "./components/BookRating.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BookRating", function() { return _BookRating__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _FooterCredit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FooterCredit */ "./components/FooterCredit.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FooterCredit", function() { return _FooterCredit__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return _Footer__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Loading */ "./components/Loading.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Loading", function() { return _Loading__WEBPACK_IMPORTED_MODULE_6__["default"]; });
@@ -46028,7 +46014,7 @@ var languages = [{
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsonjoydatta%2FDesktop%2Fgoogle-books%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -46051,5 +46037,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
