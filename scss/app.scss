@@ -121,16 +121,17 @@ body {
   }
 
   &-Rating {
-    width: 100%;
-    display: inline-block;
+    display: block;
     
     &__Heading {
+      display: block;
       color: $info;
       font-size: 18px;
       margin: 10px 0 0 0;
     }
 
     &__Stars {
+      display: inline-block;
       width: 116px;
       height: 18px;
       margin-bottom: 20px;
@@ -143,6 +144,7 @@ body {
       }
 
       &White {
+        height: 18px;
         @include flexbox();
 
         .fa-star:last-child {
@@ -159,6 +161,7 @@ body {
 
         &--Wrapper {
           width: 116px;
+          height: 18px;
           @include flexbox();
         }
 
