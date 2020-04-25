@@ -81,7 +81,7 @@ var BookDetails = function BookDetails(props) {
       columnNumber: 13
     }
   }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
-    src: imageLink !== undefined ? imageLink : '/static/empty-cover.jpeg',
+    src: imageLink !== undefined ? imageLink : './static/empty-cover.jpeg',
     thumbnail: true,
     __self: _this,
     __source: {
@@ -489,7 +489,7 @@ var FooterCredit = function FooterCredit() {
     }
   }, "LinkedIn")), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
     fluid: true,
-    src: "/static/google-logo.png",
+    src: "./static/google-logo.png",
     alt: "Powered by Google",
     __self: _this,
     __source: {
@@ -46028,7 +46028,7 @@ var languages = [{
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsonjoydatta%2FDesktop%2Fgoogle-books%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -46051,5 +46051,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
