@@ -12,7 +12,7 @@ const BookDetails = ( props ) => {
     const { volumeInfo, accessInfo } = props.data;
 
     title         = volumeInfo.title;
-    if (!isEmpty(volumeInfo.imageLinks)) {
+    if (volumeInfo.imageLinks !== undefined && !isEmpty(volumeInfo.imageLinks)) {
       imageLink   = volumeInfo.imageLinks.thumbnail;
     }
     averageRating = volumeInfo.averageRating;
@@ -23,7 +23,7 @@ const BookDetails = ( props ) => {
     categories    = volumeInfo.categories;
     language      = volumeInfo.language;
     description   = volumeInfo.description;
-    if (!isEmpty(accessInfo.pdf)) {
+    if (accessInfo.pdf !== undefined && !isEmpty(accessInfo.pdf)) {
       if (accessInfo.pdf.isAvailable) {
         pdfLink   = accessInfo.pdf.acsTokenLink;
       }
@@ -37,11 +37,7 @@ const BookDetails = ( props ) => {
         !isEmpty(props.data) ?
           <Row>
             <Col md="3">
-              {
-                imageLink !== undefined ?
-                  <Image src={imageLink} thumbnail /> :
-                  <Image src='/static/empty-cover.jpeg' thumbnail />
-              }
+              <Image src={imageLink !== undefined ? imageLink : '/static/empty-cover.jpeg'} thumbnail />
               <BookRating rating={averageRating} count={ratingsCount} />
             </Col>
             <Col md="9">

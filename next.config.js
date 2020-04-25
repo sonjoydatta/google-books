@@ -1,18 +1,8 @@
-const webpack = require("webpack");
-require("dotenv").config();
+const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  webpack: config => {
-    config.node = {
-      fs: 'empty'
-    }
-    
-    const env = Object.keys(process.env).reduce((acc, curr) => {
-      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-      return acc;
-   }, {});
-   
-    config.plugins.push(new webpack.DefinePlugin(env));
-    return config
-  }
+  env: {
+    apiUrl: 'https://www.googleapis.com/books/v1',
+  },
+  assetPrefix: !debug ? '/google-books/' : ''
 }
