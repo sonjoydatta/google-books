@@ -21,7 +21,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../public/static/bg.jpg');
+  background-image: url(#{$assetPath}/bg.jpg);
 
   &-Overly {
     width: 100%;
