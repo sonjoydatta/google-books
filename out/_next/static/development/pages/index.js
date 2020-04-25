@@ -560,7 +560,7 @@ var Layout = function Layout(props) {
     }
   }, "Read Favourite Book | Sonjoy Datta - Powered by Google"), __jsx("link", {
     rel: "icon",
-    href: "/favicon.ico",
+    href: "./favicon.ico",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -671,11 +671,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_debounce_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-debounce-input */ "./node_modules/react-debounce-input/lib/index.js");
 /* harmony import */ var react_debounce_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_debounce_input__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 var _this = undefined,
     _jsxFileName = "/Users/sonjoydatta/Desktop/google-books/components/SearchBar.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 var SearchBar = function SearchBar(props) {
@@ -688,7 +692,7 @@ var SearchBar = function SearchBar(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 9,
       columnNumber: 5
     }
   }, __jsx(react_debounce_input__WEBPACK_IMPORTED_MODULE_1__["DebounceInput"], {
@@ -701,7 +705,16 @@ var SearchBar = function SearchBar(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  }), __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faSearch"],
+    className: "form-control__Icon",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 7
     }
   }), data.length > 0 && __jsx("ul", {
@@ -709,7 +722,7 @@ var SearchBar = function SearchBar(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 11
     }
   }, data.map(function (result) {
@@ -721,7 +734,7 @@ var SearchBar = function SearchBar(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 24,
         columnNumber: 17
       }
     }, result.volumeInfo.title);
@@ -756,8 +769,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookRating__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookRating */ "./components/BookRating.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BookRating", function() { return _BookRating__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return _Footer__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return _Footer__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Loading */ "./components/Loading.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Loading", function() { return _Loading__WEBPACK_IMPORTED_MODULE_6__["default"]; });
@@ -46014,7 +46027,7 @@ var languages = [{
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsonjoydatta%2FDesktop%2Fgoogle-books%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -46037,5 +46050,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
