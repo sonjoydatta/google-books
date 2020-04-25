@@ -1,30 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Google Books Search
 
-## Getting Started
+Google Books Search is a [Next.js](https://nextjs.org/) project that used the [react-debounce-input](https://github.com/nkbt/react-debounce-input) to getting the data using the [Google books API](https://developers.google.com/books). 
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[Google Books Search - Live Demo](https://sonjoydatta.github.io/google-books/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tools
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Tool | Description |
+| --- | --- |
+| [Next.js](https://nextjs.org/) | To build a complete web application with React from scratch |
+| [Debounce](https://github.com/nkbt/react-debounce-input) | A React component that renders an Input, Textarea or other element with debounced onChange |
+| [Moment.js](https://momentjs.com/) | Validate and display the year of the book published |
+| [Bootstrap](http://getbootstrap.com/) | Build responsive, mobile-first projects on the web with the world's most popular front-end component library |
+| [SASS](http://sass-lang.com/) | Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
+| [FontAwesome](http://sass-lang.com/) | The web's most popular icon set and toolkit |
