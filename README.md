@@ -1,30 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Google Books Search
 
-## Getting Started
+Google Books Search is a [Next.js](https://nextjs.org/) project that used the [react-debounce-input](https://github.com/nkbt/react-debounce-input) to getting the data using the [Google Books API](https://developers.google.com/books).
 
-First, run the development server:
+![Credit Card payment form with empty fields](public/static/preview.gif)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Google Books Search - Live Demo](https://sonjoydatta.github.io/google-books/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tools
 
-## Learn More
+| Tool | Description |
+| --- | --- |
+| [Next.js](https://nextjs.org/) | To build a complete web application with React from scratch |
+| [Debounce](https://github.com/nkbt/react-debounce-input) | A React component that renders an Input, Textarea or other element with debounced onChange |
+| [unfetch](https://github.com/developit/unfetch) | I have used isomorphic-unfetch library, hence I need to fetch API |
+| [Moment.js](https://momentjs.com/) | Validate and display the year of the book published |
+| [Bootstrap](http://getbootstrap.com/) | Build responsive, mobile-first projects on the web with the world's most popular front-end component library |
+| [SASS](http://sass-lang.com/) | Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
+| [FontAwesome](http://sass-lang.com/) | The web's most popular icon set and toolkit |
 
-To learn more about Next.js, take a look at the following resources:
+## Browser Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Chrome 42+
+- Firefox 39+
+- Safari 10+
+- Internet Explorer 11+
+- Edge 14+
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on ZEIT Now
+This is Sonjoy Datta. I am a Front-end Web Developer. I am experienced in ReactJs, NextJs, NodeJs, Bootstrap, HTML5, CSS3, SASS/LESS, Laravel, WordPress, GIT, Bitbucket, etc. Alongside this, I am also working with database architecture development. For more about me please check,
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Website](https://sonjoydatta.me), [LinkedIn](https://www.linkedin.com/in/sonjoydatta)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sonjoydatta/google-books/blob/master/LICENSE) file for details.
