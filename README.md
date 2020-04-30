@@ -1,6 +1,6 @@
 # Google Books Search
 
-Google Books Search is a [Next.js](https://nextjs.org/) project which used [Debounce](https://github.com/nkbt/react-debounce-input) library to getting the data using the [Google Books API](https://developers.google.com/books).
+Google Books Search is a [Next.js](https://nextjs.org/) project which used the [Debounce](https://github.com/nkbt/react-debounce-input) library to get the data using the [Google Books API](https://developers.google.com/books).
 
 ![Credit Card payment form with empty fields](public/static/preview.gif)
 
